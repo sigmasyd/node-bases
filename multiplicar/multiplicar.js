@@ -20,7 +20,7 @@ let crearArchivo = (base,limite=12) => {
       data += `${base} * ${i} = ${base*i}\n`;
     }
 
-    const file_name = `tabla-${base}.txt`;
+    const file_name = `tabla-${base}x${limite}.txt`;
     fs.writeFile(`tablas/${file_name}`,data,(err)=>{
       if(err) rej(err);
       else
