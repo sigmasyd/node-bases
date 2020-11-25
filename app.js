@@ -3,6 +3,7 @@
 //const fs = require('./fs');     // archivos que hemos creado dentro del proyecto
 
 const { argv } = require('./config/yargs');
+const colors = require('colors/safe');
 const { crearArchivo , listarTabla } = require('./multiplicar/multiplicar');
 
 let comando = argv._[0];
@@ -15,7 +16,7 @@ switch(comando){
   case 'crear':
     console.log("Crear",argv.base);
     crearArchivo(argv.base,argv.limite)
-      .then( archivo => console.log(`Archivo creado: ${archivo}`) )
+      .then( archivo => console.log(`Archivo creado: `,colors.blue(archivo)) )
       .catch( console.log );
   break;
   default:

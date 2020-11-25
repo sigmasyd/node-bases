@@ -1,7 +1,11 @@
 const { rejects } = require('assert');
 const fs = require('fs');
+const colors = require('colors');
 
 let listarTabla = (base,limite=10) => {
+  console.log('================================'.green);
+  console.log(`========tabla de ${base}========`.green);
+  console.log('================================'.green);
   console.log(base, limite);
   for(let i=1;i<=limite;i++){
     console.log(`${base} * ${i} = ${base*i}`);
@@ -25,7 +29,7 @@ let crearArchivo = (base,limite=12) => {
       if(err) rej(err);
       else
         res(file_name);
-      console.log(`El archivo ${file_name} ha sido creado`);
+      console.log(`El archivo ${file_name} ha sido creado`.red);
     });
   });
 }
