@@ -1,11 +1,14 @@
 const { rejects } = require('assert');
 const fs = require('fs');
 
-let listarTabla = (base,limite) => {
+let listarTabla = (base,limite=10) => {
   console.log(base, limite);
+  for(let i=1;i<=limite;i++){
+    console.log(`${base} * ${i} = ${base*i}`);
+  }
 }
 
-let crearArchivo = (base) => {
+let crearArchivo = (base,limite=12) => {
   return new Promise((res,rej)=>{
     if(!Number(base)){
       rej(`La base [${base}] No es un numero`);
@@ -13,7 +16,7 @@ let crearArchivo = (base) => {
     }
     let data = '';
 
-    for(let i=1;i<=12;i++){
+    for(let i=1;i<=limite;i++){
       data += `${base} * ${i} = ${base*i}\n`;
     }
 
